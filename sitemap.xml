@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Русская версия (корень) -->
+  <url>
+    <loc>https://jimongramm.kz/</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/o-kompanii.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/o-kompanii.html" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/o-kompanii.html" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/o-kompanii.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/o-kompanii.html" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/partnerstvo.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/partnerstvo.html" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/partnerstvo.html" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/partnerstvo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/partnerstvo.html" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/tehnologiya-peng.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/tehnologiya-peng.html" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/tehnologiya-peng.html" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/tehnologiya-peng.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/tehnologiya-peng.html" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/privacy.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Казахская версия (/kz/) -->
+  <url>
+    <loc>https://jimongramm.kz/kz/</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/kz/o-kompanii.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/o-kompanii.html" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/o-kompanii.html" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/o-kompanii.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/o-kompanii.html" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/kz/partnerstvo.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/partnerstvo.html" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/partnerstvo.html" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/partnerstvo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/partnerstvo.html" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/kz/tehnologiya-peng.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://jimon-gramm.ru/tehnologiya-peng.html" />
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://jimongramm.kz/tehnologiya-peng.html" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://jimongramm.kz/kz/tehnologiya-peng.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jimon-gramm.ru/tehnologiya-peng.html" />
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jimongramm.kz/kz/privacy.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
