@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192x192.png">
+<meta name="theme-color" content="#1f4d3a">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Құпиялылық саясаты | JimonGramm</title>
+<meta name="description" content="jimongramm.kz сайтының құпиялылық саясаты: өтінім формасы арқылы қандай деректер жиналады, олар қалай қолданылады және жеке деректер мәселесі бойынша бізбен қалай байланысуға болады.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jimongramm.kz/kz/privacy.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap"></noscript>
+
+<style>
+:root{
+  --ivory:#faf6ea; --ivory-deep:#fffaf0; --gold:#c9a84c; --gold-dark:#a8853a;
+  --green:#1f4d3a; --green-soft:#2d6650; --text:#2a2823; --text-soft:#5c5848;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Manrope',sans-serif;background:var(--ivory);color:var(--text);line-height:1.75;}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+header{position:sticky;top:0;z-index:50;background:rgba(250,246,234,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.3);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;max-width:1100px;margin:0 auto;padding-left:24px;padding-right:24px;}
+.logo{font-size:20px;font-weight:800;color:var(--green);}
+.nav-logo-img{width:36px;height:36px;border-radius:8px;object-fit:cover;margin-right:8px;flex-shrink:0;}
+.logo span{color:var(--gold);}
+.nav-country{font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--gold-dark);border:1px solid rgba(201,168,76,0.4);padding:3px 9px;border-radius:20px;margin-left:10px;text-transform:uppercase;white-space:nowrap;}
+@media(max-width:760px){.nav-country{display:none;}}
+.nav-links{display:flex;gap:28px;font-size:15px;font-weight:600;}
+.nav-links a{color:var(--text-soft);text-decoration:none;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--green);color:var(--ivory);padding:10px 22px;border-radius:30px;font-weight:700;font-size:14px;text-decoration:none;}
+.nav-burger{display:none; flex-direction:column; justify-content:center; gap:5px; width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0; flex-shrink:0;}
+.nav-burger span{display:block; width:20px; height:2px; background:var(--green); border-radius:2px; transition:transform .25s, opacity .25s;}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.logo-textwrap{display:flex;flex-direction:column;line-height:1.15;}
+.logo-country{font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--gold-dark);text-transform:uppercase;margin-top:1px;}
+.nav-menu-wrap{position:relative;}
+.nav-menu-btn{padding:10px 20px;border-radius:30px;font-size:0.85rem;font-weight:700;cursor:pointer;background:transparent;color:var(--green);border:2px solid var(--green);white-space:nowrap;}
+.nav-menu-btn:hover{background:rgba(31,77,58,0.06);}
+.nav-menu-dropdown{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border:1px solid rgba(201,168,76,0.4);border-radius:14px;box-shadow:0 20px 50px rgba(31,77,58,0.18);min-width:230px;padding:8px;display:none;flex-direction:column;z-index:250;}
+.nav-menu-dropdown.open{display:flex;}
+.menu-item{padding:12px 14px;border-radius:8px;color:var(--green);text-decoration:none;font-weight:600;font-size:0.92rem;}
+.menu-item:hover{background:rgba(201,168,76,0.1);color:var(--gold-dark);}
+.menu-divider{height:1px;background:rgba(31,77,58,0.1);margin:6px 8px;}
+@media(max-width:760px){.nav-menu-dropdown{right:-16px;}}
+
+
+main{padding:56px 0 80px;}
+h1{font-size:30px;font-weight:800;color:var(--green);margin-bottom:8px;}
+.updated{font-size:13px;color:var(--text-soft);margin-bottom:36px;}
+h2{font-size:18px;font-weight:800;color:var(--green);margin:32px 0 10px;}
+p,li{font-size:15px;color:var(--text-soft);}
+ul{margin:8px 0 8px 20px;}
+li{margin-bottom:6px;}
+a.inline{color:var(--green-soft);text-decoration:underline;}
+
+footer{border-top:1px solid rgba(201,168,76,0.25);padding:32px 0;text-align:center;font-size:13px;color:var(--text-soft);}
+footer a{color:var(--green-soft);text-decoration:none;}
+
+@media(max-width:760px){
+    .nav-burger{display:flex;}
+    .nav-links{
+      position:fixed; top:64px; left:0; right:0;
+      flex-direction:column; align-items:stretch; gap:0;
+      background:rgba(250,246,234,0.98); backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(201,168,76,0.25);
+      max-height:0; overflow:hidden; transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links a{padding:14px 24px; width:100%; border-bottom:1px solid rgba(31,77,58,0.08); display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" style="text-decoration:none;display:flex;align-items:center;">
+      <img src="/images/logo.png" alt="JimonGramm" class="nav-logo-img">
+      <div class="logo-textwrap">
+        <div class="logo">Jimon<span>Gramm</span></div>
+        <div class="logo-country">ҚАЗАҚСТАН</div>
+      </div>
+    </a>
+    <div class="nav-menu-wrap">
+      <a href="/kz/partnerstvo.html#lead" class="nav-cta" style="margin-right:8px;">Қолжетімділік алу</a>
+      <button type="button" class="nav-menu-btn" onclick="toggleNavMenu()">Мәзір</button>
+      <div class="nav-menu-dropdown" id="navMenuDropdown">
+      <a href="/kz/" class="menu-item" onclick="closeNavMenu()">Басты бет</a>
+      <a href="/kz/o-kompanii.html" class="menu-item" onclick="closeNavMenu()">Компания туралы</a>
+      <a href="/kz/partnerstvo.html" class="menu-item" onclick="closeNavMenu()">Әріптестік</a>
+      <a href="/kz/tehnologiya-peng.html" class="menu-item" onclick="closeNavMenu()">Технология</a>
+      <a href="/kz/privacy.html" class="menu-item" onclick="closeNavMenu()">Құпиялылық саясаты</a>
+      <a href="/privacy.html" class="menu-item" onclick="closeNavMenu()">Орысша</a>
+      <div class="menu-divider"></div>
+      <a href="https://wa.me/77085080130" target="_blank" class="menu-item">📱 WhatsApp</a>
+      <a href="https://max.ru/u/f9LHodD0cOKnHRZnfCYKMqkxpgnByIZTcAc7JrC-EhSDi47lkK787lvsYjE" target="_blank" class="menu-item">💬 Max</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Құпиялылық саясаты</h1>
+  <p class="updated">Соңғы жаңартылған күні: 2026 жылғы 29 маусым</p>
+
+  <p>Бұл саясат jimongramm.kz сайты қандай жеке деректерді жинайтынын, олардың қалай қолданылатынын және Қазақстан Республикасының «Жеке деректер және оларды қорғау туралы» Заңының талаптарына сай пайдаланушының қандай құқықтары бар екенін сипаттайды.</p>
+
+  <h2>1. Біз қандай деректерді жинаймыз</h2>
+  <p>Сайттағы өтінім формасын толтыру кезінде біз мынаны сұрай аламыз:</p>
+  <ul>
+    <li>аты-жөні</li>
+    <li>телефон нөмірі және/немесе мессенджер (WhatsApp, Telegram)</li>
+    <li>email (осыған арналған форма болса)</li>
+  </ul>
+  <p>Біз бұл сайттағы формалар арқылы төлем деректерін, паспорт деректерін немесе басқа құпия ақпаратты жинамаймыз.</p>
+
+  <h2>2. Деректер не үшін қолданылады</h2>
+  <ul>
+    <li>әріптестік немесе JIMON GROUP өнімі бойынша пайдаланушымен байланысу</li>
+    <li>өтінімді сәйкес аймақтағы кураторға беру</li>
+    <li>JimonGramm технологиясы және әріптестік бағдарламасының шарттары туралы хабарлау</li>
+  </ul>
+  <p>Деректер жарнама мақсатында үшінші тарапқа берілмейді және сатылмайды.</p>
+
+  <h2>3. Деректер қалай өңделеді</h2>
+  <p>Өтінім формасынан алынған деректер jimongramm.com серверіне беріліп, куратормен байланысу үшін өңделеді. Деректер қорғалған байланыс (HTTPS) арқылы беріледі.</p>
+
+  <h2>4. Cookie файлдары</h2>
+  <p>Сайт интерфейстің дұрыс жұмыс істеуі үшін минималды техникалық cookie жинағын қолдана алады. Сайт деректерді қайта сатуға арналған сыртқы жарнама трекерлерін қолданбайды.</p>
+
+  <h2>5. Пайдаланушының құқықтары</h2>
+  <p>Сіз кез келген уақытта мынаны сұрай аласыз:</p>
+  <ul>
+    <li>сіз туралы қандай деректер сақталғаны туралы ақпарат</li>
+    <li>деректеріңізді базадан жою</li>
+    <li>жеке деректерді өңдеуге келісімді кері қайтару</li>
+  </ul>
+
+  <h2>6. Байланыс</h2>
+  <p>Жеке деректерді өңдеу мәселелері бойынша сайттағы өтінім формасы арқылы хабарласуға немесе <a class="inline" href="https://jimongramm.com/">jimongramm.com</a>-ға жазуға болады.</p>
+
+  <h2>7. Саясатқа өзгерістер</h2>
+  <p>Біз бұл саясатты жаңартып отыра аламыз. Өзекті нұсқа әрқашан jimongramm.kz/kz/privacy.html мекенжайында қолжетімді.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 JIMON GROUP × JimonGramm. <a href="/kz/">jimongramm.kz</a> · <a href="https://jimongroup.kz/">jimongroup.kz</a>
+  </div>
+</footer>
+
+
+<script>
+function toggleNavMenu(){
+  document.getElementById('navMenuDropdown').classList.toggle('open');
+}
+function closeNavMenu(){
+  document.getElementById('navMenuDropdown').classList.remove('open');
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.nav-menu-wrap')) closeNavMenu();
+});
+</script>
+</body>
+</html>
