@@ -81,6 +81,9 @@
   .nav-logo-text{font-weight:800; color:var(--green-deep); font-size:1.05rem; font-family:'Manrope',sans-serif;}
   .nav-cta{padding:10px 22px; border-radius:30px; font-size:0.85rem; font-weight:700; cursor:pointer; text-decoration:none; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--green-deep); border:2px solid var(--green-deep); white-space:nowrap;}
   .nav-cta:hover{filter:brightness(1.04); transform:translateY(-1px);}
+  .lang-switch{display:flex; background:rgba(22,50,31,0.06); border-radius:20px; padding:3px; gap:2px;}
+.lang-opt{padding:7px 14px; border-radius:16px; font-size:0.78rem; font-weight:800; color:var(--green-deep); text-decoration:none;}
+.lang-opt.active{background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--green-deep);}
   .nav-link{color:var(--green-deep); text-decoration:none; font-weight:600; font-size:0.92rem; opacity:0.85; transition:opacity .2s;}
   .nav-link:hover{opacity:1; color:var(--gold-deep);}
   .nav-country{font-size:10px; font-weight:700; letter-spacing:0.06em; color:var(--gold-deep); border:1px solid var(--border-gold); padding:3px 9px; border-radius:20px; margin-left:10px; text-transform:uppercase; white-space:nowrap;}
@@ -179,6 +182,10 @@
   </a>
   <div class="nav-right">
     <a href="#lead" class="nav-cta" onclick="openLeadModal('Nav')">Подключиться →</a>
+    <div class="lang-switch">
+      <a href="/" class="lang-opt active">РУ</a>
+      <a href="/kz/" class="lang-opt">ҚАЗ</a>
+    </div>
     <div class="nav-menu-wrap">
       <button type="button" class="nav-menu-btn" onclick="toggleNavMenu()">Меню</button>
       <div class="nav-menu-dropdown" id="navMenuDropdown">
@@ -186,7 +193,6 @@
       <a href="/partnerstvo.html" class="menu-item" onclick="closeNavMenu()">Партнёрство</a>
       <a href="/tehnologiya-peng.html" class="menu-item" onclick="closeNavMenu()">Технология</a>
       <a href="/privacy.html" class="menu-item" onclick="closeNavMenu()">Политика конфиденциальности</a>
-      <a href="/kz/" class="menu-item" onclick="closeNavMenu()">Қазақша</a>
       <div class="menu-divider"></div>
       <a href="https://wa.me/77085080130" target="_blank" class="menu-item">📱 WhatsApp</a>
       <a href="https://max.ru/u/f9LHodD0cOKnHRZnfCYKMqkxpgnByIZTcAc7JrC-EhSDi47lkK787lvsYjE" target="_blank" class="menu-item">💬 Max</a>
