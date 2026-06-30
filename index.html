@@ -826,7 +826,7 @@ async function submitModalLead(){
     country, city,
     source: CONFIG.leadSource + ' — ' + modalContextLabel + ' — ' + status
   });
-
+if (typeof fbq !== 'undefined') fbq('track', 'Lead');
   document.getElementById('modalFormView').style.display = 'none';
   document.getElementById('modalSuccessView').style.display = 'block';
   btn.textContent = 'Отправить заявку →'; btn.disabled = false;
@@ -853,7 +853,7 @@ async function submitLead(){
     country, city,
     source: CONFIG.leadSource + ' — Инлайн-форма — ' + status
   });
-
+if (typeof fbq !== 'undefined') fbq('track', 'Lead');
   document.getElementById('inlineFormView').style.display = 'none';
   document.getElementById('inlineSuccessView').style.display = 'block';
   btn.textContent = 'Отправить заявку →'; btn.disabled = false;
