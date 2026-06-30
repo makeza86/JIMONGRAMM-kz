@@ -94,7 +94,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,246,234,0.92);backdr
 .nav-links{display:flex;gap:28px;font-size:15px;font-weight:600;}
 .nav-links a{color:var(--text-soft);text-decoration:none;}
 .nav-links a:hover{color:var(--gold-dark);}
-.nav-cta{background:var(--green);color:var(--ivory);padding:10px 22px;border-radius:30px;font-weight:700;font-size:14px;text-decoration:none;}
+.nav-cta{background:var(--green);color:var(--ivory);padding:10px 22px;border-radius:30px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;}
 .nav-burger{display:none; flex-direction:column; justify-content:center; gap:5px; width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0; flex-shrink:0;}
 .nav-burger span{display:block; width:20px; height:2px; background:var(--green); border-radius:2px; transition:transform .25s, opacity .25s;}
 .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -134,7 +134,7 @@ h2.section-title{font-size:28px;font-weight:800;color:var(--green);margin-bottom
 .path li{padding:8px 0 8px 26px;position:relative;font-size:15px;}
 .path li::before{content:"✦";position:absolute;left:0;color:var(--gold);}
 .path-new li::before{color:var(--gold-dark);}
-.path-btn{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;}
+.path-btn{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;}
 .path-existing .path-btn{background:var(--gold);color:#1a2e22;}
 .path-new .path-btn{background:var(--green);color:var(--ivory);}
 
@@ -184,10 +184,31 @@ table.compare td.cross{color:#b0473e;font-weight:800;}
 .cta-final{background:var(--green);color:var(--ivory);text-align:center;padding:64px 24px;border-radius:24px;}
 .cta-final h2{font-size:28px;font-weight:800;margin-bottom:14px;}
 .cta-final p{color:rgba(250,246,234,0.85);margin-bottom:24px;}
-.cta-final a{background:var(--gold);color:#1a2e22;padding:15px 32px;border-radius:30px;font-weight:700;text-decoration:none;font-size:16px;}
+.cta-final button{background:var(--gold);color:#1a2e22;padding:15px 32px;border-radius:30px;font-weight:700;text-decoration:none;font-size:16px;border:none;cursor:pointer;font-family:inherit;}
 
 footer{border-top:1px solid rgba(201,168,76,0.25);padding:32px 0;text-align:center;font-size:13px;color:var(--text-soft);}
 footer a{color:var(--green-soft);text-decoration:none;}
+
+.modal-overlay{position:fixed; inset:0; background:rgba(31,77,58,0.55); backdrop-filter:blur(4px); z-index:300; display:none; align-items:center; justify-content:center; padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--ivory); border-radius:24px; padding:28px; max-width:480px; width:100%; max-height:88vh; overflow-y:auto; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.3);}
+.modal-close{position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.1rem; color:var(--text-soft); cursor:pointer; width:32px; height:32px; border-radius:50%;}
+.modal-close:hover{background:rgba(31,77,58,0.06);}
+.modal-tag{display:inline-flex; align-items:center; gap:8px; background:rgba(201,168,76,0.12); color:var(--green); font-size:0.74rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:7px 18px; border-radius:30px; margin-bottom:14px; border:1px solid rgba(201,168,76,0.4);}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+.form-field{display:flex; flex-direction:column; gap:4px;}
+.form-field.full{grid-column:1/-1;}
+.form-label{font-size:0.8rem; font-weight:600; color:var(--text-soft); text-align:left;}
+.form-input{padding:10px 14px; border-radius:10px; background:#fff; border:1px solid rgba(201,168,76,0.3); color:var(--text); font-size:0.9rem; outline:none; font-family:inherit;}
+.form-input::placeholder{color:rgba(42,40,35,0.35);}
+.form-input:focus{border-color:var(--gold);}
+.form-submit{width:100%; margin-top:8px; padding:14px; border-radius:14px; border:2px solid var(--green); background:linear-gradient(135deg,var(--gold),#e3c158); color:var(--green); font-size:1rem; font-weight:800; cursor:pointer; transition:all .25s;}
+.form-submit:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,168,76,0.35);}
+.form-note{font-size:0.75rem; color:var(--text-soft); margin-top:12px;}
+.modal-success-icon{font-size:3rem; margin-bottom:12px;}
+.modal-success-title{font-size:1.3rem; font-weight:800; color:var(--green); margin-bottom:8px; font-family:'Noto Serif SC',serif;}
+.modal-success-text{color:var(--text-soft); font-size:0.96rem;}
 </style>
 </head>
 <body>
@@ -202,7 +223,7 @@ footer a{color:var(--green-soft);text-decoration:none;}
       </div>
     </a>
     <div class="nav-menu-wrap">
-      <a href="/partnerstvo.html#lead" class="nav-cta" style="margin-right:8px;">Получить доступ</a>
+      <button type="button" class="nav-cta" style="margin-right:8px;" onclick="openLeadModal('Хедер — Партнёрство')">Получить доступ</button>
       <button type="button" class="nav-menu-btn" onclick="toggleNavMenu()">Меню</button>
       <div class="nav-menu-dropdown" id="navMenuDropdown">
       <a href="/" class="menu-item" onclick="closeNavMenu()">Главная</a>
@@ -244,7 +265,7 @@ footer a{color:var(--green-soft);text-decoration:none;}
         <li>Больше клиентов на той же нагрузке — рост дохода без пропорционального роста усилий</li>
         <li>Вы продолжаете вести команду, технология берёт на себя рутину консультирования</li>
       </ul>
-      <a href="#lead" class="path-btn">Подключить технологию своей команде</a>
+      <button type="button" class="path-btn" onclick="openLeadModal('Путь — моя команда')">Подключить технологию своей команде</button>
     </div>
     <div class="path path-new">
       <span class="path-tag">Вы ищете возможность</span>
@@ -257,7 +278,7 @@ footer a{color:var(--green-soft);text-decoration:none;}
         <li>Готовая система — заходите не в "идею на словах", а в работающий механизм с продуктом и инструментом</li>
         <li>Куратор сопровождает на старте — без давления и навязывания решений</li>
       </ul>
-      <a href="#lead" class="path-btn">Узнать, как начать</a>
+      <button type="button" class="path-btn" onclick="openLeadModal('Путь — другая команда')">Узнать, как начать</button>
     </div>
   </section>
 
@@ -303,10 +324,10 @@ footer a{color:var(--green-soft);text-decoration:none;}
     <div class="faq-item"><h3>Можно ли совмещать партнёрство с основной работой?</h3><p>Да, большинство партнёров начинают именно так — технология автоматизирует часть процессов, что снижает требования по времени на старте.</p></div>
   </section>
 
-  <section class="cta-final" id="lead">
+  <section class="cta-final">
     <h2>Технология уже готова. Решение — за вами.</h2>
     <p>Оставьте заявку — куратор расскажет, как подключить JimonGramm к вашему бизнесу или как начать с нуля.</p>
-    <a href="https://jimongramm.com/?ref=partnerstvo" target="_blank" rel="noopener">Оставить заявку</a>
+    <button type="button" onclick="openLeadModal('Финальный CTA — Партнёрство')">Оставить заявку</button>
   </section>
 
 </main>
@@ -317,8 +338,99 @@ footer a{color:var(--green-soft);text-decoration:none;}
   </div>
 </footer>
 
+<!-- МОДАЛЬНОЕ ОКНО -->
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLeadModal()">✕</button>
+    <div id="modalFormView">
+      <div class="modal-tag" id="modalContextTag">Заявка на подключение</div>
+      <h2 class="section-title" style="font-size:1.25rem; margin-bottom:6px;">Расскажите о себе</h2>
+      <p style="font-size:0.85rem; color:var(--text-soft); margin-bottom:16px;">Подберу точные условия под вашу ситуацию</p>
+      <div class="form-grid">
+        <div class="form-field full">
+          <label class="form-label" for="mm-status">Вы уже партнёр JIMON GROUP?</label>
+          <select class="form-input" id="mm-status">
+            <option value="">Выберите вариант</option>
+            <option value="Да, в моей команде">Да, в команде JimonGramm</option>
+            <option value="Да, в другой команде">Да, в другой команде</option>
+            <option value="Нет, хочу начать">Нет, хочу начать</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label class="form-label" for="mm-name">Имя</label>
+          <input class="form-input" id="mm-name" placeholder="Ваше имя">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-country">Страна</label>
+          <select class="form-input" id="mm-country" onchange="updateCities('mm')">
+            <option value="">Выберите страну</option>
+            <option value="Россия">Россия</option>
+            <option value="Казахстан">Казахстан</option>
+            <option value="Кыргызстан">Кыргызстан</option>
+            <option value="Узбекистан">Узбекистан</option>
+            <option value="Таджикистан">Таджикистан</option>
+            <option value="Беларусь">Беларусь</option>
+            <option value="Армения">Армения</option>
+            <option value="Азербайджан">Азербайджан</option>
+            <option value="Грузия">Грузия</option>
+            <option value="Молдова">Молдова</option>
+            <option value="Монголия">Монголия</option>
+            <option value="Турция">Турция</option>
+            <option value="Другая">Другая страна</option>
+          </select>
+          <input class="form-input" id="mm-country-custom" placeholder="Укажите страну" style="display:none; margin-top:8px;">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-city">Город</label>
+          <select class="form-input" id="mm-city" onchange="checkCustomCity('mm')">
+            <option value="">Сначала выберите страну</option>
+          </select>
+          <input class="form-input" id="mm-city-custom" placeholder="Укажите город" style="display:none; margin-top:8px;">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-phone-code">Код страны</label>
+          <select class="form-input" id="mm-phone-code">
+            <option value="+7">🇷🇺 +7</option>
+            <option value="+7kz">🇰🇿 +7</option>
+            <option value="+996">🇰🇬 +996</option>
+            <option value="+998">🇺🇿 +998</option>
+            <option value="+992">🇹🇯 +992</option>
+            <option value="+375">🇧🇾 +375</option>
+            <option value="+374">🇦🇲 +374</option>
+            <option value="+994">🇦🇿 +994</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-phone">Телефон</label>
+          <input class="form-input" id="mm-phone" placeholder="900 123 45 67">
+        </div>
+        <div class="form-field full">
+          <label class="form-label" for="mm-method">Способ связи</label>
+          <select class="form-input" id="mm-method">
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Max">Max</option>
+          </select>
+        </div>
+      </div>
+      <button class="form-submit" onclick="submitModalLead()">Отправить заявку →</button>
+      <div class="form-note">Данные защищены и не передаются третьим лицам.</div>
+    </div>
+    <div id="modalSuccessView" style="display:none; text-align:center;">
+      <div class="modal-success-icon">🎉</div>
+      <div class="modal-success-title">Заявка принята!</div>
+      <p class="modal-success-text">Я свяжусь с вами лично в ближайшее время и объясню все условия подключения.</p>
+      <button type="button" style="margin-top:20px; width:100%; cursor:pointer; padding:14px; border-radius:14px; border:2px solid var(--green); background:transparent; color:var(--green); font-weight:700; font-family:inherit; font-size:0.95rem;" onclick="closeLeadModal()">Закрыть</button>
+    </div>
+  </div>
+</div>
 
 <script>
+const CONFIG = {
+  leadSource: "jimongramm.kz",
+  webhookUrl: "https://jimongramm.com/api/landing-lead"
+};
+
 function toggleNavMenu(){
   document.getElementById('navMenuDropdown').classList.toggle('open');
 }
@@ -328,6 +440,92 @@ function closeNavMenu(){
 document.addEventListener('click', function(e){
   if(!e.target.closest('.nav-menu-wrap')) closeNavMenu();
 });
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+let modalContextLabel = 'Не указан';
+function openLeadModal(contextLabel){
+  modalContextLabel = contextLabel || 'Не указан';
+  document.getElementById('modalContextTag').textContent = 'Заявка · ' + modalContextLabel;
+  document.getElementById('leadModal').classList.add('open');
+  document.getElementById('modalFormView').style.display = 'block';
+  document.getElementById('modalSuccessView').style.display = 'none';
+}
+function closeLeadModal(){
+  document.getElementById('leadModal').classList.remove('open');
+}
+document.getElementById('leadModal').addEventListener('click', (e)=>{ if(e.target.id === 'leadModal') closeLeadModal(); });
+
+if (new URLSearchParams(window.location.search).get('openModal') === '1') {
+  openLeadModal('Прямая ссылка');
+}
+
+const CITIES = {
+  "Россия": ["Москва","Санкт-Петербург","Новосибирск","Екатеринбург","Казань","Нижний Новгород","Краснодар","Уфа","Самара","Ростов-на-Дону","Челябинск","Омск","Воронеж","Красноярск","Другой город"],
+  "Казахстан": ["Алматы","Астана","Шымкент","Караганда","Актобе","Тараз","Павлодар","Усть-Каменогорск","Другой город"],
+  "Кыргызстан": ["Бишкек","Ош","Джалал-Абад","Каракол","Другой город"],
+  "Узбекистан": ["Ташкент","Самарканд","Бухара","Андижан","Другой город"],
+  "Таджикистан": ["Душанбе","Худжанд","Бохтар","Другой город"],
+  "Беларусь": ["Минск","Гомель","Витебск","Могилёв","Другой город"],
+  "Армения": ["Ереван","Гюмри","Другой город"],
+  "Азербайджан": ["Баку","Гянджа","Другой город"],
+  "Грузия": ["Тбилиси","Батуми","Другой город"],
+  "Молдова": ["Кишинёв","Бельцы","Другой город"],
+  "Монголия": ["Улан-Батор","Другой город"],
+  "Турция": ["Стамбул","Анкара","Анталья","Другой город"],
+  "Другая": ["Другой город"]
+};
+function updateCities(prefix){
+  const country = document.getElementById(prefix+'-country').value;
+  const citySelect = document.getElementById(prefix+'-city');
+  const countryCustom = document.getElementById(prefix+'-country-custom');
+  countryCustom.style.display = (country === 'Другая') ? 'block' : 'none';
+  citySelect.innerHTML = '<option value="">Выберите город</option>';
+  (CITIES[country] || []).forEach(c=>{
+    const opt = document.createElement('option'); opt.value = c; opt.textContent = c;
+    citySelect.appendChild(opt);
+  });
+  checkCustomCity(prefix);
+}
+function checkCustomCity(prefix){
+  const city = document.getElementById(prefix+'-city').value;
+  document.getElementById(prefix+'-city-custom').style.display = (city === 'Другой город') ? 'block' : 'none';
+}
+
+async function sendLead(data){
+  try{
+    await fetch(CONFIG.webhookUrl, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+  }catch(e){}
+}
+
+async function submitModalLead(){
+  const status = document.getElementById('mm-status').value;
+  const name = document.getElementById('mm-name').value.trim();
+  let country = document.getElementById('mm-country').value;
+  if(country === 'Другая') country = document.getElementById('mm-country-custom').value.trim();
+  let city = document.getElementById('mm-city').value;
+  if(city === 'Другой город') city = document.getElementById('mm-city-custom').value.trim();
+  const phoneCode = document.getElementById('mm-phone-code').value.replace('kz','');
+  const phone = document.getElementById('mm-phone').value.trim();
+  const method = document.getElementById('mm-method').value;
+
+  if(!status || !name || !country || !phone){ alert('Пожалуйста, заполните все поля.'); return; }
+
+  const btn = document.querySelector('#modalFormView .form-submit');
+  btn.textContent = 'Отправляем...'; btn.disabled = true;
+
+  await sendLead({
+    name, contact: phoneCode + ' ' + phone, contactMethod: method,
+    country, city,
+    source: CONFIG.leadSource + ' — ' + modalContextLabel + ' — ' + status
+  });
+
+  document.getElementById('modalFormView').style.display = 'none';
+  document.getElementById('modalSuccessView').style.display = 'block';
+  btn.textContent = 'Отправить заявку →'; btn.disabled = false;
+}
 </script>
 </body>
 </html>
