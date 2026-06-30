@@ -94,7 +94,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,246,234,0.92);backdr
 .nav-links{display:flex;gap:28px;font-size:15px;font-weight:600;}
 .nav-links a{color:var(--text-soft);text-decoration:none;}
 .nav-links a:hover{color:var(--gold-dark);}
-.nav-cta{background:var(--green);color:var(--ivory);padding:10px 22px;border-radius:30px;font-weight:700;font-size:14px;text-decoration:none;}
+.nav-cta{background:var(--green);color:var(--ivory);padding:10px 22px;border-radius:30px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;}
 .nav-burger{display:none; flex-direction:column; justify-content:center; gap:5px; width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0; flex-shrink:0;}
 .nav-burger span{display:block; width:20px; height:2px; background:var(--green); border-radius:2px; transition:transform .25s, opacity .25s;}
 .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -134,7 +134,7 @@ h2.section-title{font-size:28px;font-weight:800;color:var(--green);margin-bottom
 .path li{padding:8px 0 8px 26px;position:relative;font-size:15px;}
 .path li::before{content:"✦";position:absolute;left:0;color:var(--gold);}
 .path-new li::before{color:var(--gold-dark);}
-.path-btn{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;}
+.path-btn{display:inline-block;margin-top:14px;padding:13px 26px;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;}
 .path-existing .path-btn{background:var(--gold);color:#1a2e22;}
 .path-new .path-btn{background:var(--green);color:var(--ivory);}
 
@@ -184,17 +184,39 @@ table.compare td.cross{color:#b0473e;font-weight:800;}
 .cta-final{background:var(--green);color:var(--ivory);text-align:center;padding:64px 24px;border-radius:24px;}
 .cta-final h2{font-size:28px;font-weight:800;margin-bottom:14px;}
 .cta-final p{color:rgba(250,246,234,0.85);margin-bottom:24px;}
-.cta-final a{background:var(--gold);color:#1a2e22;padding:15px 32px;border-radius:30px;font-weight:700;text-decoration:none;font-size:16px;}
+.cta-final button{background:var(--gold);color:#1a2e22;padding:15px 32px;border-radius:30px;font-weight:700;text-decoration:none;font-size:16px;border:none;cursor:pointer;font-family:inherit;}
 
 footer{border-top:1px solid rgba(201,168,76,0.25);padding:32px 0;text-align:center;font-size:13px;color:var(--text-soft);}
 footer a{color:var(--green-soft);text-decoration:none;}
+
+.modal-overlay{position:fixed; inset:0; background:rgba(31,77,58,0.55); backdrop-filter:blur(4px); z-index:300; display:none; align-items:center; justify-content:center; padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--ivory); border-radius:24px; padding:28px; max-width:480px; width:100%; max-height:88vh; overflow-y:auto; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.3);}
+.modal-close{position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.1rem; color:var(--text-soft); cursor:pointer; width:32px; height:32px; border-radius:50%;}
+.modal-close:hover{background:rgba(31,77,58,0.06);}
+.modal-tag{display:inline-flex; align-items:center; gap:8px; background:rgba(201,168,76,0.12); color:var(--green); font-size:0.74rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:7px 18px; border-radius:30px; margin-bottom:14px; border:1px solid rgba(201,168,76,0.4);}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+.form-field{display:flex; flex-direction:column; gap:4px;}
+.form-field.full{grid-column:1/-1;}
+.form-label{font-size:0.8rem; font-weight:600; color:var(--text-soft); text-align:left;}
+.form-input{padding:10px 14px; border-radius:10px; background:#fff; border:1px solid rgba(201,168,76,0.3); color:var(--text); font-size:0.9rem; outline:none; font-family:inherit;}
+.form-input::placeholder{color:rgba(42,40,35,0.35);}
+.form-input:focus{border-color:var(--gold);}
+.form-input option{color:#000;}
+.form-submit{width:100%; margin-top:8px; padding:14px; border-radius:14px; border:2px solid var(--green); background:linear-gradient(135deg,var(--gold),#e3c158); color:var(--green); font-size:1rem; font-weight:800; cursor:pointer; transition:all .25s;}
+.form-submit:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,168,76,0.35);}
+.form-note{font-size:0.75rem; color:var(--text-soft); margin-top:12px;}
+.modal-success-icon{font-size:3rem; margin-bottom:12px;}
+.modal-success-title{font-size:1.3rem; font-weight:800; color:var(--green); margin-bottom:8px; font-family:'Noto Serif SC',serif;}
+.modal-success-text{color:var(--text-soft); font-size:0.96rem;}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="/" style="text-decoration:none;display:flex;align-items:center;">
+    <a href="/kz/" style="text-decoration:none;display:flex;align-items:center;">
       <img src="/images/logo.png" alt="JimonGramm" class="nav-logo-img">
       <div class="logo-textwrap">
         <div class="logo">Jimon<span>Gramm</span></div>
@@ -202,7 +224,7 @@ footer a{color:var(--green-soft);text-decoration:none;}
       </div>
     </a>
     <div class="nav-menu-wrap">
-      <a href="/kz/partnerstvo.html#lead" class="nav-cta" style="margin-right:8px;">Қолжетімділік алу</a>
+      <button type="button" class="nav-cta" style="margin-right:8px;" onclick="openLeadModal('Хедер — Әріптестік')">Қолжетімділік алу</button>
       <button type="button" class="nav-menu-btn" onclick="toggleNavMenu()">Мәзір</button>
       <div class="nav-menu-dropdown" id="navMenuDropdown">
       <a href="/kz/" class="menu-item" onclick="closeNavMenu()">Басты бет</a>
@@ -244,7 +266,7 @@ footer a{color:var(--green-soft);text-decoration:none;}
         <li>Сол жүктемеде көп клиент — күш-жігердің пропорционалды өсуінсіз табыс өседі</li>
         <li>Сіз команданы жүргізуді жалғастырасыз, кеңес берудің күнделікті бөлігін технология алады</li>
       </ul>
-      <a href="#lead" class="path-btn">Технологияны командаңызға қосу</a>
+      <button type="button" class="path-btn" onclick="openLeadModal('Жол — менің командам')">Технологияны командаңызға қосу</button>
     </div>
     <div class="path path-new">
       <span class="path-tag">Мүмкіндік іздейсіз бен</span>
@@ -257,7 +279,7 @@ footer a{color:var(--green-soft);text-decoration:none;}
         <li>Дайын жүйе — "сөзбен идеяға" емес, өнімі мен құралы бар жұмыс істейтін механизмге кірісіз</li>
         <li>Куратор бастауда қасыңызда болады — қысым мен шешімді таңусыз</li>
       </ul>
-      <a href="#lead" class="path-btn">Қалай бастауға болатынын білу</a>
+      <button type="button" class="path-btn" onclick="openLeadModal('Жол — басқа команда')">Қалай бастауға болатынын білу</button>
     </div>
   </section>
 
@@ -303,10 +325,10 @@ footer a{color:var(--green-soft);text-decoration:none;}
     <div class="faq-item"><h3>Әріптестікті негізгі жұмыспен қатар алып жүруге болады ма?</h3><p>Иә, әріптестердің көпшілігі дәл осылай бастайды — технология процестердің бір бөлігін автоматтандырады, бұл бастауда уақыт талабын азайтады.</p></div>
   </section>
 
-  <section class="cta-final" id="lead">
+  <section class="cta-final">
     <h2>Технология дайын тұр. Шешім — өзіңізде.</h2>
     <p>Өтінім қалдырыңыз — куратор JimonGramm-ды бизнесіңізге қалай қосуға немесе нөлден қалай бастауға болатынын айтады.</p>
-    <a href="https://jimongramm.com/?ref=partnerstvo" target="_blank" rel="noopener">Өтінім қалдыру</a>
+    <button type="button" onclick="openLeadModal('Финалды CTA — Әріптестік')">Өтінім қалдыру</button>
   </section>
 
 </main>
@@ -317,8 +339,99 @@ footer a{color:var(--green-soft);text-decoration:none;}
   </div>
 </footer>
 
+<!-- МОДАЛЬДЫ ТЕРЕЗЕ -->
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLeadModal()">✕</button>
+    <div id="modalFormView">
+      <div class="modal-tag" id="modalContextTag">Қосылуға өтінім</div>
+      <h2 class="section-title" style="font-size:1.25rem; margin-bottom:6px;">Өзіңіз туралы айтып беріңіз</h2>
+      <p style="font-size:0.85rem; color:var(--text-soft); margin-bottom:16px;">Жағдайыңызға сай нақты шарттарды таңдап беремін</p>
+      <div class="form-grid">
+        <div class="form-field full">
+          <label class="form-label" for="mm-status">Сіз JIMON GROUP әріптесі бұрыннан ба?</label>
+          <select class="form-input" id="mm-status">
+            <option value="">Нұсқаны таңдаңыз</option>
+            <option value="Да, в моей команде">Иә, JimonGramm командасында</option>
+            <option value="Да, в другой команде">Иә, басқа командада</option>
+            <option value="Нет, хочу начать">Жоқ, бастауды қалаймын</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label class="form-label" for="mm-name">Аты</label>
+          <input class="form-input" id="mm-name" placeholder="Атыңыз">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-country">Ел</label>
+          <select class="form-input" id="mm-country" onchange="updateCities('mm')">
+            <option value="">Елді таңдаңыз</option>
+            <option value="Россия">Ресей</option>
+            <option value="Казахстан">Қазақстан</option>
+            <option value="Кыргызстан">Қырғызстан</option>
+            <option value="Узбекистан">Өзбекстан</option>
+            <option value="Таджикистан">Тәжікстан</option>
+            <option value="Беларусь">Беларусь</option>
+            <option value="Армения">Армения</option>
+            <option value="Азербайджан">Әзербайжан</option>
+            <option value="Грузия">Грузия</option>
+            <option value="Молдова">Молдова</option>
+            <option value="Монголия">Моңғолия</option>
+            <option value="Турция">Түркия</option>
+            <option value="Другая">Басқа ел</option>
+          </select>
+          <input class="form-input" id="mm-country-custom" placeholder="Елді көрсетіңіз" style="display:none; margin-top:8px;">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-city">Қала</label>
+          <select class="form-input" id="mm-city" onchange="checkCustomCity('mm')">
+            <option value="">Алдымен елді таңдаңыз</option>
+          </select>
+          <input class="form-input" id="mm-city-custom" placeholder="Қаланы көрсетіңіз" style="display:none; margin-top:8px;">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-phone-code">Ел коды</label>
+          <select class="form-input" id="mm-phone-code">
+            <option value="+7">🇷🇺 +7</option>
+            <option value="+7kz">🇰🇿 +7</option>
+            <option value="+996">🇰🇬 +996</option>
+            <option value="+998">🇺🇿 +998</option>
+            <option value="+992">🇹🇯 +992</option>
+            <option value="+375">🇧🇾 +375</option>
+            <option value="+374">🇦🇲 +374</option>
+            <option value="+994">🇦🇿 +994</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="mm-phone">Телефон</label>
+          <input class="form-input" id="mm-phone" placeholder="900 123 45 67">
+        </div>
+        <div class="form-field full">
+          <label class="form-label" for="mm-method">Байланыс тәсілі</label>
+          <select class="form-input" id="mm-method">
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Telegram">Telegram</option>
+            <option value="Max">Max</option>
+          </select>
+        </div>
+      </div>
+      <button class="form-submit" onclick="submitModalLead()">Өтінімді жіберу →</button>
+      <div class="form-note">Деректер қорғалған және үшінші тарапқа берілмейді.</div>
+    </div>
+    <div id="modalSuccessView" style="display:none; text-align:center;">
+      <div class="modal-success-icon">🎉</div>
+      <div class="modal-success-title">Өтінім қабылданды!</div>
+      <p class="modal-success-text">Жақын уақытта сізбен жеке байланысып, барлық қосылу шарттарын түсіндіремін.</p>
+      <button type="button" style="margin-top:20px; width:100%; cursor:pointer; padding:14px; border-radius:14px; border:2px solid var(--green); background:transparent; color:var(--green); font-weight:700; font-family:inherit; font-size:0.95rem;" onclick="closeLeadModal()">Жабу</button>
+    </div>
+  </div>
+</div>
 
 <script>
+const CONFIG = {
+  leadSource: "jimongramm.kz/kz",
+  webhookUrl: "https://jimongramm.com/api/landing-lead"
+};
+
 function toggleNavMenu(){
   document.getElementById('navMenuDropdown').classList.toggle('open');
 }
@@ -328,6 +441,92 @@ function closeNavMenu(){
 document.addEventListener('click', function(e){
   if(!e.target.closest('.nav-menu-wrap')) closeNavMenu();
 });
+
+/* ===== МОДАЛЬДЫ ТЕРЕЗЕ ===== */
+let modalContextLabel = 'Көрсетілмеген';
+function openLeadModal(contextLabel){
+  modalContextLabel = contextLabel || 'Көрсетілмеген';
+  document.getElementById('modalContextTag').textContent = 'Өтінім · ' + modalContextLabel;
+  document.getElementById('leadModal').classList.add('open');
+  document.getElementById('modalFormView').style.display = 'block';
+  document.getElementById('modalSuccessView').style.display = 'none';
+}
+function closeLeadModal(){
+  document.getElementById('leadModal').classList.remove('open');
+}
+document.getElementById('leadModal').addEventListener('click', (e)=>{ if(e.target.id === 'leadModal') closeLeadModal(); });
+
+if (new URLSearchParams(window.location.search).get('openModal') === '1') {
+  openLeadModal('Тікелей сілтеме');
+}
+
+const CITIES = {
+  "Россия": ["Мәскеу","Санкт-Петербург","Новосибирск","Екатеринбург","Қазан","Нижний Новгород","Краснодар","Уфа","Самара","Ростов-на-Дону","Челябинск","Омбы","Воронеж","Красноярск","Басқа қала"],
+  "Казахстан": ["Алматы","Астана","Шымкент","Қарағанды","Ақтөбе","Тараз","Павлодар","Өскемен","Басқа қала"],
+  "Кыргызстан": ["Бішкек","Ош","Жалал-Абад","Қарақол","Басқа қала"],
+  "Узбекистан": ["Ташкент","Самарқан","Бұхара","Андижан","Басқа қала"],
+  "Таджикистан": ["Душанбе","Хужанд","Бохтар","Басқа қала"],
+  "Беларусь": ["Минск","Гомель","Витебск","Могилёв","Басқа қала"],
+  "Армения": ["Ереван","Гюмри","Басқа қала"],
+  "Азербайджан": ["Баку","Гянджа","Басқа қала"],
+  "Грузия": ["Тбилиси","Батуми","Басқа қала"],
+  "Молдова": ["Кишинёв","Бельцы","Басқа қала"],
+  "Монголия": ["Ұлан-Батыр","Басқа қала"],
+  "Турция": ["Истанбул","Анкара","Анталья","Басқа қала"],
+  "Другая": ["Басқа қала"]
+};
+function updateCities(prefix){
+  const country = document.getElementById(prefix+'-country').value;
+  const citySelect = document.getElementById(prefix+'-city');
+  const countryCustom = document.getElementById(prefix+'-country-custom');
+  countryCustom.style.display = (country === 'Другая') ? 'block' : 'none';
+  citySelect.innerHTML = '<option value="">Қаланы таңдаңыз</option>';
+  (CITIES[country] || []).forEach(c=>{
+    const opt = document.createElement('option'); opt.value = c; opt.textContent = c;
+    citySelect.appendChild(opt);
+  });
+  checkCustomCity(prefix);
+}
+function checkCustomCity(prefix){
+  const city = document.getElementById(prefix+'-city').value;
+  document.getElementById(prefix+'-city-custom').style.display = (city === 'Басқа қала') ? 'block' : 'none';
+}
+
+async function sendLead(data){
+  try{
+    await fetch(CONFIG.webhookUrl, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+  }catch(e){}
+}
+
+async function submitModalLead(){
+  const status = document.getElementById('mm-status').value;
+  const name = document.getElementById('mm-name').value.trim();
+  let country = document.getElementById('mm-country').value;
+  if(country === 'Другая') country = document.getElementById('mm-country-custom').value.trim();
+  let city = document.getElementById('mm-city').value;
+  if(city === 'Басқа қала') city = document.getElementById('mm-city-custom').value.trim();
+  const phoneCode = document.getElementById('mm-phone-code').value.replace('kz','');
+  const phone = document.getElementById('mm-phone').value.trim();
+  const method = document.getElementById('mm-method').value;
+
+  if(!status || !name || !country || !phone){ alert('Барлық өрісті толтырыңыз.'); return; }
+
+  const btn = document.querySelector('#modalFormView .form-submit');
+  btn.textContent = 'Жіберіліп жатыр...'; btn.disabled = true;
+
+  await sendLead({
+    name, contact: phoneCode + ' ' + phone, contactMethod: method,
+    country, city,
+    source: CONFIG.leadSource + ' — ' + modalContextLabel + ' — ' + status
+  });
+
+  document.getElementById('modalFormView').style.display = 'none';
+  document.getElementById('modalSuccessView').style.display = 'block';
+  btn.textContent = 'Өтінімді жіберу →'; btn.disabled = false;
+}
 </script>
 </body>
 </html>
